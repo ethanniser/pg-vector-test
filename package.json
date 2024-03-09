@@ -1,0 +1,17 @@
+{
+  "name": "pg-test",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/pg": "^8.11.2",
+    "apache-arrow": "^15.0.1",
+    "pg": "^8.11.3",
+    "pgvector": "^0.1.8"
+  }
+}
