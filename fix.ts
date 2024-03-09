@@ -17,6 +17,9 @@ const id =
 const id2 =
   "<dbpedia:Instruction_Concerning_the_Criteria_for_the_Discernment_of_Vocations_with_regard_to_Persons_with_Homosexual_Tendencies_in_view_of_their_Admission_to_the_Seminary_and_to_Holy_Orders>";
 
+const id3 =
+  "<dbpedia:Protocol_for_Limiting_and_Regulating_the_Cultivation_of_the_Poppy_Plant,_the_Production_of,_International_and_Wholesale_Trade_in,_and_Use_of_Opium>";
+
 const arrow = await fs.readFile(`data/train/data-00006-of-00014.arrow`);
 const table = tableFromIPC(arrow);
 const data: Row[] = table.toArray();
