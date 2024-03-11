@@ -26,10 +26,13 @@ async function createEmbedding(input: string) {
 
 async function processQuery(query: string, i: number) {
   const embedding = await createEmbedding(query);
-  const finalString = `SELECT (title) from wikipedia ORDER BY embedding <#> '${JSON.stringify(
+  const finalString = `
+  SET hnsw.ef_search = 20;
+  SELECT (title) from wikipedia ORDER BY embedding <#> '${JSON.stringify(
     embedding
-  )}' LIMIT 5;`;
-  await Bun.write(`src/bench/sql/query-${i}.sql`, finalString);
+  )}' LIMIT 5;
+  `;
+  await Bun.write(`src/bench/sql/query-${i}*.sql`, finalString);
 }
 
 await Promise.all(inputs.map(processQuery));
